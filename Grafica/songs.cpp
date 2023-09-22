@@ -1,27 +1,32 @@
 #include "songs.h"
 
 
-songs::songs(string FileName){
+songs::songs(string FileName,QListWidget* list){
     this->Memo = new virtualMemo(FileName);
+    this->Memo->list = list;
     this->Memo->fullPages();
 }
 
 
 
-vector<Album> songs::passAgetPrev(){
-    int res = this->Memo->getprevPage();
-    if(res == -1){
-        return {};
-    }
-    return this->Memo->returnPrev();
+void songs::passAgetPrev(){
+    this->Memo->getprevPage();
+
+    Memo->setUI();
+
+
+
+  //  return this->Memo->returnPrev();
 
 }
-vector<Album> songs::passAgetNext(){
-    int res = this->Memo->getnextPage();
-    if(res == -1){
-        return {};
-    }
-    return this->Memo->returnNext();
+void songs::passAgetNext(){
+    this->Memo->getnextPage();
+
+    Memo->setUI();
+
+
+
+  //  return this->Memo->returnNext();
 }
 
 

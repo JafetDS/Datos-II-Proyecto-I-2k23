@@ -6,7 +6,7 @@
 #include <vector>
 #include <cmath>
 #include "Album.cpp"
-
+#include <QListWidget>
 
 using namespace std;
 
@@ -19,12 +19,13 @@ class virtualMemo{
 
         virtualMemo(string);
         void fullPages();
-        int getnextPage();
-        int getprevPage();
+        void getnextPage();
+        void getprevPage();
         vector<Album> returnNext();
         vector<Album> returnCurr();
         vector<Album> returnPrev();
-
+        QListWidget *list;
+        void setUI();
 
     private:
         string File;
@@ -47,6 +48,8 @@ class virtualMemo{
         void setPagepoint();
         void loadNewPage(ifstream*,vector<Album>*);
         int movePage(int);
+
+
 
         
 };

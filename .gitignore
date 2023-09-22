@@ -1,3 +1,7 @@
+# ignore Cmake buid directory
+build/
+
+
 # Prerequisites
 *.d
 
@@ -30,3 +34,6 @@
 *.exe
 *.out
 *.app
+
+build-Grafica-Desktop_Qt_5_12_12_MSVC2017_64bit-Debug/
+build-Grafica-Desktop_Qt_5_7_0_GCC_64bit-Debug/
